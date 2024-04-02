@@ -1,0 +1,30 @@
+# server配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# 连接池配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql:///sm_db
+      username: root
+      password: Gx8692118.
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.atguigu.pojo
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      id-type: auto
+      table-prefix: news_
+
+#jwt
+jwt:
+  token:
+    tokenExpiration: 120 # 120 minutes
+    tokenSignKey: headlinelololol
